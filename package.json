@@ -1,0 +1,24 @@
+{
+   "name": "ejs-mysql-node2",
+   "version": "1.0.0",
+   "description": "",
+   "main": "server.js",
+   "scripts": {
+      "dev": "nodemon server.js",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+      "cookie-parser": "^1.4.6",
+      "ejs": "^3.1.8",
+      "express": "^4.18.1",
+      "express-flash": "^0.0.2",
+      "express-session": "^1.17.3",
+      "express-validator": "^6.14.0",
+      "mysql": "^2.18.1",
+      "nodemon": "^2.0.16"
+   }
+}

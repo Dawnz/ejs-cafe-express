@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <%- include('../partials/head'); %>
+   </head>
+   <body class="container">
+      <header><%- include('../partials/header'); %></header>
+
+      <main>
+         <div class="jumbotron-fluid">
+            <h1 class="display-4 text-center">All Orders</h1>
+         </div>
+         <table class="table">
+            <thead>
+               <th>Id#</th>
+               <th>Customer UUID</th>
+               <th>Order confirmation</th>
+               <th>Created at</th>
+               <!-- <th>Actions</th> -->
+            </thead>
+            <tbody>
+               <% orders?.forEach(function(order) { %>
+               <tr>
+                  <td><%= order.id %></td>
+                  <td><%= order.uuid %></td>
+                  <td class="w-25">
+                     <% if(order.isConfirmed){ %> Confirmed <% } else{ %> Not
+                     Confirmed <% } %>
+                  </td>
+                  <td><%= order.created%></td>
+               </tr>
+               <% }); %>
+            </tbody>
+         </table>
+      </main>
+
+      <footer><%- include('../partials/footer'); %></footer>
+   </body>
+</html>

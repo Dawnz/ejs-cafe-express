@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <%- include('../partials/head'); %>
+   </head>
+   <body class="container">
+      <header><%- include('../partials/header'); %></header>
+
+      <main>
+         <div class="jumbotron">
+            <a href="/projects" class="btn btn-primary">+ Add New Project</a
+            ><br />
+            <br />
+            <table class="table">
+               <thead>
+                  <th>Id#</th>
+                  <th>Title</th>
+                  <th>Description</th>
+                  <th>Start Date</th>
+                  <th>Due Date</th>
+                  <th>Actions</th>
+               </thead>
+               <tbody>
+                  <% results?.forEach(function(res) { %>
+                  <tr>
+                     <td><%= res.id %></td>
+                     <td><%= res.project_title %></td>
+                     <td class="w-25"><%= res.project_description %></td>
+                     <td><%= res.project_start_dt%></td>
+                     <td><%= res.project_due_dt%></td>
+                     <td class="row pt-4">
+                        <a
+                           href="/edit/<%= res.id %>"
+                           class="btn btn-primary mr-2"
+                           >Edit</a
+                        >
+                        <a href="/notes/<%= res.id %>" class="btn btn-info mr-2"
+                           >View notes</a
+                        >
+                        <a href="/delete/<%= res.id %>" class="btn btn-danger"
+                           >Delete</a
+                        >
+                     </td>
+                  </tr>
+                  <% }); %>
+               </tbody>
+            </table>
+         </div>
+      </main>
+
+      <footer><%- include('../partials/footer'); %></footer>
+   </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <%- include('../partials/head'); %>
+   </head>
+   <body class="container">
+      <header><%- include('../partials/header'); %></header>
+
+      <main>
+         <div class="jumbotron-fluid">
+            <h1 class="display-4 text-center">What would you like to order?</h1>
+         </div>
+         <div class="row mx-auto h-25">
+            <% menuItems?.forEach(function(menuItem) { %>
+            <div class="card col mx-2" style="width: 18rem">
+               <img
+                  class="card-img-top mt-3"
+                  src="/images/<%= menuItem.name %>.jpg"
+                  alt="Card image cap"
+                  height="220px"
+               />
+               <div class="card-body">
+                  <h5 class="card-title"><%= menuItem.name %></h5>
+                  <p class="card-text"><%= menuItem.description %></p>
+                  <a href="#" class="btn btn-primary">Order</a>
+               </div>
+            </div>
+            <% }); %>
+            <!-- <div class="card col mx-2" style="width: 18rem">
+               <img
+                  class="card-img-top mt-3"
+                  src="/images/herbal-expresso.jpg"
+                  alt="Card image cap"
+                  height="220px"
+               />
+               <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                     Some quick example text to build on the card title and make
+                     up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Order</a>
+               </div>
+            </div>
+            <div class="card col mx-2" style="width: 18rem">
+               <img
+                  class="card-img-top mt-3"
+                  src="/images/herbal-expresso.jpg"
+                  alt="Card image cap"
+                  height="220px"
+               />
+               <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">
+                     Some quick example text to build on the card title and make
+                     up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Order</a>
+               </div>
+            </div> -->
+         </div>
+      </main>
+
+      <footer><%- include('../partials/footer'); %></footer>
+   </body>
+</html>
